@@ -1,14 +1,5 @@
-<!-- $event - Angular передает объект события -->
-<!-- <form class="todo-form" (submit)="create($event, titleInput)"> -->
-<!-- <form class="todo-form" (submit)="create($event, titleInput.value)"> -->
-  <!-- мешает тогику и разметку -->
-  <!-- <form class="todo-form" (submit)="create($event, titleInput.value); titleInput.value = '' "> -->
+
 <form class="todo-form" (ngSubmit)="onSubmit()" #todoForm="ngForm">
-    <!-- #titleInput - объявление локальной переменной в шаблоне -->
-<!-- <input type="text" placeholder="Что нужно сделать?" #titleInput> -->
-<!-- Двустороняя привязка данных с помощью директивы ngModule. newTodoTitle-свойство. []-т.к.привязываемся к свойству. ()-привязка к событию для обновления этого свойства. name-обязательный атрибут  -->
-    <!-- Чтобы увидеть двусторонюю привязку данных в действии после input в шаблонных тегах укажем свойтво -->
 <input type="text" name="title" [(ngModel)]="title" placeholder="Что нужно сделать?" required>
-<!-- {{ newTodoTitle }} -->
 <button type="submit" [disabled]="todoForm.form.invalid">Добавить</button>
 </form>

@@ -3,12 +3,6 @@ import { Component, Input } from '@angular/core';
 import { Todo } from './shared/todo'
 import { todos } from './shared/data'
 
-interface ITodo {
-  title: string;
-  completed: boolean;
-}
-
-
 
 @Component({
   selector: 'app-root',

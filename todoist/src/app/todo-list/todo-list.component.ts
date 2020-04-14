@@ -1,9 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 
 import { Todo } from '../shared/todo';
-import { TodoService } from '../shared/todo.service';
-
-
 
 @Component({ 
   selector: 'app-todo-list',
@@ -28,6 +25,7 @@ export class TodoListComponent implements OnInit {
     }
   
     delete(todo: Todo){
+      console.log('delete')
       let index = this.todos.indexOf(todo);
   
       if(index > -1) {
