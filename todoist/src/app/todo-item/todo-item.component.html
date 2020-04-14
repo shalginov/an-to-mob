@@ -1,0 +1,27 @@
+ <!-- Структурная дириктива *ngFor -->
+    <!-- Атрибутная дириктива *ngClass , если нужно привязать несколько классов-->
+    <!-- <div class="todo-item" *ngFor="let todo of todos" [ngClass]="{ 'completed': todo.completed }">  -->
+      <!-- Привязка свойств к классам (удобно использовать если нужно привязать один класс) -->
+      <!-- Привязка событий Event binding -->
+      <div class="todo-item" [class.completed]="todo.completed"> 
+    
+        <button class="checkbox icon" (click)="toggle()">
+          <!-- Использование *ngIf -->
+          <!-- <i *ngIf="!todo.completed" class="material-icons">check_box_outline_blank</i>
+          <i *ngIf="todo.completed" class="material-icons">check_box</i> -->
+          <!-- Использование шаблонных тегов или (офиц.) интерполяция (один из видов привязки данных) -->
+          <i class="material-icons">{{ todo.completed ? 'check_box' : 'check_box_outline_blank'}}</i>
+          <!-- Привязка свойства Property binding -->
+          <!-- smilik -->
+          <!-- <i class="material-icons" [innerText]="'=)'"></i> -->
+          <!-- <i class="material-icons" [innerText]="todo.completed ? 'check_box' : 'check_box_outline_blank'"></i> -->
+          <!-- Еще способ -->
+          <!-- <i class="material-icons" [textContent]="todo.completed ? 'check_box' : 'check_box_outline_blank'"></i> -->
+        </button>
+        <span class="title">{{ todo.title }}</span>
+        <div class="actions">
+          <button class="delete icon" (click) = "onDelete()" >
+            <i class="material-icons">delete</i>
+          </button>
+        </div>
+      </div>
