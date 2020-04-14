@@ -11,13 +11,15 @@ export class TodoItemComponent implements OnInit {
 
   @Input() todo: Todo;
   @Output() delete = new EventEmitter();
+  @Output() toggle = new EventEmitter();
+
   constructor() { }
 
   ngOnInit(): void {
   }
 
-  toggle() {
-    this.todo.completed = !this.todo.completed;
+  onToggle() {
+    this.toggle.emit(this.todo)
   }
 
   onDelete() {

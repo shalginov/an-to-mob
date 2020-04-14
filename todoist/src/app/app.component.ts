@@ -1,9 +1,5 @@
 import { Component, Input } from '@angular/core';
 
-import { Todo } from './shared/todo'
-import { todos } from './shared/data'
-
-
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -11,11 +7,4 @@ import { todos } from './shared/data'
 })
 export class AppComponent {
 title: string = "Todoist";
-@Input() todos: Todo[] = todos;
-
-create(title:string) {
-  const todo = new Todo(title);
-  todos.push(todo);
-}
-
 }
